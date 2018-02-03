@@ -14,6 +14,11 @@
 .float-right {
   color: white;
   float: right;
+  margin-right : 10px;
+}
+
+.googleBtn{
+  margin : 0 10px 0 10px;
 }
 
 .gotohome {

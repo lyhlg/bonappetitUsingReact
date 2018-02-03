@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Allplaces = () => {
-  return (
-    <div>
-      allplaces
-    </div>
-  )
-};
+class Allplaces extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+  componentDidMount() {
+    if (!localStorage.token) {
+      alert('Please Login');
+      this.props.history.push('/');
+    }
+
+  }
+
+  render() {
+    return (
+      <div>
+        All
+      </div>
+    );
+  }
+}
 
 export default Allplaces;
