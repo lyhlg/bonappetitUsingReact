@@ -27,10 +27,7 @@ class Login extends Component {
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
         />
-        {/* <FontAwesome
-          name='google'
-        />
-        <span> Login with Google</span> */}
+
       </div>
     )
   }
