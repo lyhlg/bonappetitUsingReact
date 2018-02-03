@@ -1,0 +1,6 @@
+.background {
+  line-height: 60;
+  height: 80%;
+  background : url('../../images/main.jpg');
+  background-size: cover;
+}

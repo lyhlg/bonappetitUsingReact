@@ -1,0 +1,47 @@
+.header {
+  line-height: 60px;
+  vertical-align: middle;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.navBar {
+  height: 60px;
+  color: white;
+  text-decoration: none;
+  background-color: #343a40;
+}
+
+.float-right {
+  color: white;
+  float: right;
+}
+
+.gotohome {
+  color: white;
+  font-size: 22px;
+  margin: 20px;
+  text-decoration: none;
+}
+
+.google-btn,
+.logout,
+.allList,
+.myList {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.separator {
+  margin: 0 10px 0 0;
+}
+
+.gotohome:hover,
+.google-btn:hover,
+.logout:hover,
+.allList:hover,
+.myList:hover {
+  color: red;
+  text-decoration: none;
+}
