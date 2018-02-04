@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import FontAwesome from 'react-fontawesome';
-// import axios from 'axios';
+import 'whatwg-fetch';
 import "./Header.css";
 
 class Header extends Component {
@@ -11,15 +11,28 @@ class Header extends Component {
   }
 
   authLoginGoogleSucc(res) {
-    console.log(res);
     if (localStorage.token) {
       localStorage.removeItem('token');
     }
-    console.log( 'aldkfjalskfjasldkj', this.props.stat);
     localStorage.setItem('token', res.profileObj.googleId);
-    this.props.stat.userId = res.profileObj.googleId;
-    this.props.stat.userName = res.profileObj.name;
-    this.props.stat.gmailAccount = res.profileObj.email;
+
+    // 부모 props의 state값 변경
+    this.props._accountCng(res.profileObj.googleId, res.profileObj.name, res.profileObj.email, res.profileObj.imageUrl);
+
+    fetch('/api/usercreate', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        userId: this.props.stat.userId,
+        userName: this.props.stat.userName,
+        gmailAccount: this.props.stat.gmailAccount,
+        thumbnail: this.props.stat.thumbnail
+      })
+    });
+    alert(`환영합니다. ${this.props.stat.userName} 님 :)`)
+    this.props.history.push('/');
 
   }
 
@@ -34,7 +47,6 @@ class Header extends Component {
   }
 
   render() {
-    console.log( 'header' , this.props);
     return (
       <div className="header">
         <nav className="navBar">

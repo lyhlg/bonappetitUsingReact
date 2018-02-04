@@ -1,17 +1,22 @@
-// const controller = require('../controllers');
+const controller = require('../controllers');
+
 const router = require('express').Router();
+const bodyparser = require('body-parser');
 
-router.get('/api/allplaces', (req, res) => {
+router.use(bodyparser.urlencoded({ extended: false }));
+router.use(bodyparser.json());
 
-});
+// Return All Place List
+router.get('/api/allplaces', controller.allplaces.get);
 
-router.get('/api/myplaces', (req, res) => {
+// Return My Place List
+router.get('/api/myplaces/', controller.myplaces.get);
 
-});
+// Create User
+router.post('/api/usercreate', controller.usercreate.post);
 
-router.post('/api/create', (req, res) => {
-
-});
+// Create new Post
+router.post('/api/create', controller.create.post);
 
 
 module.exports = router;

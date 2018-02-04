@@ -3,8 +3,8 @@ var models = require('../models');
 module.exports = {
   myplaces: {
     get: function (req, res) {
-      models.myplaces.get((err, results) => {
-          res.json(results);
+      models.myplaces.get(req.query.token, (err, results) => {
+        res.json(results);
       });
     }
   },
@@ -12,19 +12,22 @@ module.exports = {
   allplaces: {
     get: function (req, res) {
       models.allplaces.get((err, results) => {
-          res.json(results);
+        res.json(results);
+      });
+    }
+  },
+
+  usercreate: {
+    post: function (req, res) {
+      models.usercreate.post(Object.values(req.body), (err, result ) => {
+        res.json(200);
       });
     }
   },
 
   create: {
     post: function (req, res) {
-      var data = [];
-      data.push(sess);
-      for (const key in req.body) {
-        data.push( req.body[key]);
-      }
-      models.create.post(data ,(err, results) => res.redirect('/'));
+      models.create.post(Object.values(req.body), (err, results) => res.redirect('/'));
     }
   }
 };

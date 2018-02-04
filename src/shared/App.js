@@ -9,19 +9,35 @@ class App extends Component {
     this.state = {
       userId: null,
       userName: null,
-      gmailAccount: null
-    }
+      gmailAccount: null,
+      thumbnail: null,
+      placeList: []
+    };
+  }
+
+  accountCng(id,name,acc,thmNail){
+    this.setState({
+      userId: id,
+      userName: name,
+      gmailAccount: acc,
+      thumbnail: thmNail
+    });
+  }
+
+  calledPlaceList(list){
+    this.setState({
+      placeList: JSON.parse(list)
+    })
   }
 
   render() {
-    console.log("this.state: ", this.state);
     return (
       <Router>
         <div>
-          <Route render={routerprops => <Header {...routerprops} stat={this.state} />}/>
+          <Route render={routerprops => <Header {...routerprops} stat={this.state} _accountCng={this.accountCng.bind(this)}/>}/>
           <Route exact path='/'  component={Home} />
-          <Route path='/allplaces' component={Allplaces} />
-          <Route path='/myplaces' component={Myplaces} />
+          <Route path='/allplaces' render={routerprops => <Allplaces {...routerprops} stat={this.state} _calledPlaceList={this.calledPlaceList.bind(this)} />} />
+          <Route path='/myplaces' render={routerprops => <Myplaces {...routerprops} stat={this.state} _calledPlaceList={this.calledPlaceList.bind(this)} />} />
         </div>
       </Router>
     );
