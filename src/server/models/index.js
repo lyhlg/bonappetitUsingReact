@@ -4,7 +4,6 @@ module.exports = {
 
   myplaces: {
     get: function (token, callback) {
-      console.log( "token:",token);
       let myPlacesGetQuery = `select B.id, A.userId, A.userName, A.gmailAccount, A.thumbnail, B.title, B.menu, B.price, B.comment from users_new as A inner join place_info_new as B on A.userId = B.userId where A.userId = '${token}' order by id desc`;
         db.query(myPlacesGetQuery, (err, results) => {
           if (err) throw err;
@@ -39,11 +38,6 @@ module.exports = {
           });
         }
       });
-
-
-
-
-
     }
   },
 
@@ -55,5 +49,5 @@ module.exports = {
         callback(err, results);
       });
     }
-  },
+  }
 };

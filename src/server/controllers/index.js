@@ -27,7 +27,8 @@ module.exports = {
 
   create: {
     post: function (req, res) {
-      models.create.post(Object.values(req.body), (err, results) => res.redirect('/'));
+      console.log("req.body:", req.body );
+      models.create.post(Object.values(req.body), (err, results) => res.redirect('http://localhost:3000/myplaces'));
     }
   }
 };
