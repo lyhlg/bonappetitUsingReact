@@ -1,0 +1,107 @@
+.plus {
+        width: 50px;
+        text-align: right;
+        margin-left: 85%;
+        margin-top: 10px;
+}
+
+
+.post-preview>a {
+        color: #212529;
+}
+
+.post-preview>a:focus,
+.post-preview>a:hover {
+        text-decoration: none;
+        color: #0085A1;
+}
+
+.post-preview>a>.post-menu {
+        font-size: 30px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+}
+
+.post-preview>a>.post-comment {
+        font-weight: 300;
+        margin: 0 0 10px;
+}
+
+.post-preview>.post-meta {
+        font-size: 18px;
+        font-style: italic;
+        margin-top: 0;
+        color: #868e96;
+}
+
+.post-preview>.post-meta>a {
+        text-decoration: none;
+        color: #212529;
+}
+
+.post-preview>.post-meta>a:focus,
+.post-preview>.post-meta>a:hover {
+        text-decoration: underline;
+        color: #0085A1;
+}
+
+p {
+        line-height: 1.5;
+        margin: 30px 0;
+}
+
+p a {
+        text-decoration: underline;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+        font-weight: 800;
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a {
+        color: #212529;
+        -webkit-transition: all 0.2s;
+        -moz-transition: all 0.2s;
+        transition: all 0.2s;
+}
+
+a:focus,
+a:hover {
+        color: #0085A1;
+}
+
+blockquote {
+        font-style: italic;
+        color: #868e96;
+}
+
+.storeName {
+        font-size: 18px;
+        font-family: 'Nanum Gothic', 'Muli', sans-serif;
+}
+
+.menuName {
+        font-size: 14px;
+        color: darkgrey;
+        font-family: 'Nanum Gothic', 'Muli', sans-serif;
+}
+
+.gmailAcc {
+        color: rgb(19, 18, 18);
+        font-size: 16px;
+        font-family: 'Alegreya Sans', sans-serif;
+}
+
+.comment {
+        font-family: 'Nanum Gothic', 'Muli', sans-serif;
+}
+
+.price {
+        font-size: 13px;
+        color: palevioletred;
+}

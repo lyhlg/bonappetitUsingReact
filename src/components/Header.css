@@ -5,7 +5,7 @@
 }
 
 .navBar {
-  height: 60px;
+  height: 82px;
   color: white;
   text-decoration: none;
   background-color: #343a40;
@@ -14,12 +14,22 @@
 .float-right {
   color: white;
   float: right;
+  margin-right : 10px;
 }
 
+.googleBtn{
+  margin : 0 10px 0 10px;
+}
+.button {
+  width: 160px !important;
+  height: 40px !important;
+}
 .gotohome {
   color: white;
   font-size: 22px;
   margin: 20px;
+  line-height: 84px;
+  font-size: 30px;
   text-decoration: none;
 }
 

@@ -1,0 +1,33 @@
+.RegisterPage {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.backdropCreate {
+  position: fixed;
+  z-index: 1;
+  background-color: #f4f4f4;
+  top: 26%;
+  left: 39%;
+  padding: 20px;
+  max-width: 100%;
+  min-width: 20%;
+  max-height: 100%;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  border-radius: 5px;
+  -webkit-animation: animatezoom 0.4s;
+    animation: animatezoom 0.4s;
+}
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
