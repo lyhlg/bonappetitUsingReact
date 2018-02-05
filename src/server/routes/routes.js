@@ -18,5 +18,6 @@ router.post('/api/usercreate', controller.usercreate.post);
 // Create new Post
 router.post('/api/create', controller.create.post);
 
+router.get('/api/likes', controller.likes.get);
 
 module.exports = router;

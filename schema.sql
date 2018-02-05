@@ -11,5 +11,6 @@ CREATE TABLE place_info_new (
   title VARCHAR(256) NOT NULL,
   menu VARCHAR(256) NOT NULL,
   price INT(32) NOT NULL,
-  comment VARCHAR(2048) NOT NULL
+  comment VARCHAR(2048) NOT NULL,
+  likes INT(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

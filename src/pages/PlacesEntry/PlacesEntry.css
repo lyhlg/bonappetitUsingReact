@@ -100,3 +100,8 @@ blockquote {
 .comment {
         font-family: 'Nanum Gothic', 'Muli', sans-serif;
 }
+
+.price {
+        font-size: 13px;
+        color: palevioletred;
+}

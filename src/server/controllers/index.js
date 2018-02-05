@@ -27,8 +27,19 @@ module.exports = {
 
   create: {
     post: function (req, res) {
-      console.log("req.body:", req.body );
-      models.create.post(Object.values(req.body), (err, results) => res.redirect('http://localhost:3000/myplaces'));
+      models.create.post(Object.values(req.body), (err, results, dup ) => {
+        if ( dup ){
+          res.redirect('http://localhost:3000/Redirect');
+        } else {
+          res.redirect('http://localhost:3000/Allplaces');
+        }
+      })
     }
+  },
+
+  likes: {
+    get: function ( req, res ){
+      models.likes.get(req.query.token, (err, results) => res.json(results)
+      )}
   }
 };

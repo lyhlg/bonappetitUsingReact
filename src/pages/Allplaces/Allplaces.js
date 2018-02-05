@@ -7,24 +7,7 @@ import 'whatwg-fetch';
 class Allplaces extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      titleIsOpen: false,
-    };
-    this.openTitle = this.openTitle.bind(this);
-    this.cancelTitle = this.cancelTitle.bind(this);
   }
-
-  openTitle() {
-    this.setState({
-      titleIsOpen: true
-    });
-  };
-
-  cancelTitle() {
-    this.setState({
-      titleIsOpen: false
-    });
-  };
 
   componentDidMount() {
     if (!localStorage.token) {
@@ -35,21 +18,23 @@ class Allplaces extends Component {
       .then(res => {
         return res.json();
       }).then(json => {
-        this.props._calledPlaceList(JSON.stringify(json))
+        localStorage.setItem('data', JSON.stringify(json));
+        this.props._calledPlaceList(JSON.stringify(json));
       }).catch(err => console.error('parsing failed', err));
   }
 
   render() {
+    console.log( " @@@",this.props);
     return (
       <div>
-        <div className="plus" onClick={this.openTitle}> <img src={plus} width="80px" /> </div>
+        <div className="plus" onClick={this.props._openTitle}> <img src={plus} width="80px" /> </div>
         {this.props.stat.placeList.map((item, k) => {
-          return (<PlacesEntry i={item} key={k} />);
+          return (<PlacesEntry i={item} __openModal={() => { this.props._openModal() }} __closeModal={() => { this.props._closeModal() }} __cancelModal={() => { this.props._cancelModal()}} _stat= {this.props.stat} __likeToUnlike = { this.props._likeToUnlike} key={k} />);
         })}
         <Create
           item={this.props.i}
-          show={this.state.titleIsOpen}
-          onCancel={this.cancelTitle}>
+          show={this.props.stat.titleIsOpen}
+          onCancel={this.props._cancelTitle}>
         </Create>
       </div>
     );
